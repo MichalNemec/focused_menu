@@ -42,6 +42,7 @@ class _FocusedMenuItemState extends State<FocusedMenuItem> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
       onHover: (event) {
         (widget.onItemHover ?? () {})();
       },
