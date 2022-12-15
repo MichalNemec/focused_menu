@@ -76,7 +76,9 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
         key: containerKey,
         onTap: (widget.openWithTapType == TapType.TAP)
             ? () async {
@@ -109,7 +111,7 @@ class _FocusedMenuHolderState extends State<FocusedMenuHolder> {
                     await openMenu(context);
                   }
                 : null,
-        child: widget.child);
+        child: widget.child));
   }
 
   Future openMenu(BuildContext context) async {
